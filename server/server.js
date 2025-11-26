@@ -24,7 +24,7 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Origin",
-    "https://mern-auth-frontend-qtwh.onrender.com"
+    "https://mern-authentication-system-4.onrender.com"
   );
   res.header(
     "Access-Control-Allow-Headers",
@@ -37,7 +37,7 @@ app.use((req, res, next) => {
 app.use(
   cors({
     origin: [
-      "https://mern-auth-frontend-qtwh.onrender.com",
+      "https://mern-authentication-system-4.onrender.com",
       "http://localhost:5173",
     ], // exact frontend URL
     credentials: true, // allow cookies / token
