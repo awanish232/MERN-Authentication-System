@@ -14,7 +14,7 @@ connectDB();
 
 const allowedOrigins = [
   "http://localhost:5173", // local dev
-  "https://mern-auth-frontend-qtwh.onrender.com", // deployed frontend
+  "https://mern-authentication-system-4.onrender.com", // deployed frontend
 ];
 
 //(important for Safari cookies)
