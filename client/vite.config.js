@@ -12,8 +12,8 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://mean-auth-backend.onrender.com", //your backend Render URL
-        changeOrigin: true,
+        target: "https://mern-authentication-system-o4e1.onrender.com", //your backend Render URL 
+        changeOrigin: true, 
         secure: true,
       },
     },
