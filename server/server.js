@@ -10,37 +10,29 @@ import sendMail from "./config/nodemailer.js";
 const app = express();
 const port = process.env.PORT || 4000;
 
-// Connect Database
 connectDB();
 
-// Trust Proxy for cookies (Render / Vercel ke liye important)
+// Safari / secure cookies ke liye
 app.set("trust proxy", 1);
 
-// ⭐ ONLY THIS CORS — Nothing extra ⭐
 app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://mern-authentication-system-4.onrender.com"
+      "https://mern-authentication-system-4.onrender.com",
     ],
     credentials: true,
   })
 );
 
-// Middleware
 app.use(express.json());
 app.use(cookieParser());
 
-// Default Route
+// Routes
 app.get("/", (req, res) => res.send("API Working"));
-
-// Auth Routes
 app.use("/api/auth", authRouter);
-
-// User Routes
 app.use("/api/user", userRouter);
 
-// Test Mail
 app.get("/test-mail", async (req, res) => {
   try {
     await sendMail(
@@ -55,5 +47,4 @@ app.get("/test-mail", async (req, res) => {
   }
 });
 
-// Server Start
 app.listen(port, () => console.log(`Server started on PORT:${port}`));
